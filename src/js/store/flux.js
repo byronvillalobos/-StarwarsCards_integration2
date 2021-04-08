@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (localStoragePeoples === null || localStoragePeoples === undefined) {
 					// Si localStorage NO existe, entonces se cargan los datos de la API.
-					const url = "https://swapi.dev/api/people/";
+					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us03.gitpod.io/people/";
 					const response = await fetch(url);
 					const data = await response.json();
 					setStore({ peoples: data.results });
@@ -30,7 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (localStoragePlanets === null || localStoragePlanets === undefined) {
 					// Si localStorage NO existe, entonces se cargan los datos de la API.
-					const url = "https://swapi.dev/api/planets/";
+					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us03.gitpod.io/planets/";
 					const response = await fetch(url);
 					const data = await response.json();
 					setStore({ planets: data.results });
@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (localStorageVehicles === null || localStorageVehicles === undefined) {
 					// Si localStorage NO existe, entonces se cargan los datos de la API.
-					const url = "https://swapi.dev/api/vehicles/";
+					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us03.gitpod.io/vehicles/";
 					const response = await fetch(url);
 					const data = await response.json();
 					setStore({ vehicles: data.results });
