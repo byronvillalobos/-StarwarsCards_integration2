@@ -13,13 +13,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (localStoragePeoples === null || localStoragePeoples === undefined) {
 					// Si localStorage NO existe, entonces se cargan los datos de la API.
-					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us03.gitpod.io/people/";
+					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us04.gitpod.io/people/";
 					const response = await fetch(url);
 					const data = await response.json();
-					setStore({ peoples: data.results });
+					console.log("*** data people API ***");
+					console.log(data);
+					console.log("*** data.results people API ***");
+					// console.log(data.results);
+					setStore({ peoples: data });
 
-					localStorage.setItem("peoplesAPI", JSON.stringify(data.results));
+					localStorage.setItem("peoplesAPI", JSON.stringify(data));
 				} else {
+					console.log("*** data people localStorage ***");
+					console.log(localStoragePeoples);
 					// Si localStorage SI existe, entonces se cargan los datos de la variable local, para no volver a realizar Request.
 					setStore({ peoples: JSON.parse(localStoragePeoples) });
 				}
@@ -30,12 +36,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (localStoragePlanets === null || localStoragePlanets === undefined) {
 					// Si localStorage NO existe, entonces se cargan los datos de la API.
-					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us03.gitpod.io/planets/";
+					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us04.gitpod.io/planets/";
 					const response = await fetch(url);
 					const data = await response.json();
-					setStore({ planets: data.results });
+					setStore({ planets: data });
 
-					localStorage.setItem("planetsAPI", JSON.stringify(data.results));
+					localStorage.setItem("planetsAPI", JSON.stringify(data));
 				} else {
 					// Si localStorage SI existe, entonces se cargan los datos de la variable local, para no volver a realizar Request.
 					setStore({ planets: JSON.parse(localStoragePlanets) });
@@ -47,12 +53,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				if (localStorageVehicles === null || localStorageVehicles === undefined) {
 					// Si localStorage NO existe, entonces se cargan los datos de la API.
-					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us03.gitpod.io/vehicles/";
+					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us04.gitpod.io/vehicles/";
 					const response = await fetch(url);
 					const data = await response.json();
-					setStore({ vehicles: data.results });
+					setStore({ vehicles: data });
 
-					localStorage.setItem("vehiclesAPI", JSON.stringify(data.results));
+					localStorage.setItem("vehiclesAPI", JSON.stringify(data));
 				} else {
 					// Si localStorage SI existe, entonces se cargan los datos de la variable local, para no volver a realizar Request.
 					setStore({ vehicles: JSON.parse(localStorageVehicles) });

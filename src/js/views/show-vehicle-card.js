@@ -43,7 +43,7 @@ export default function ShowVehicleCard() {
 								<div key={index} className="col-lg-4 mb-5">
 									<VehicleCard
 										key={index}
-										cardId={index}
+										cardId={item.id}
 										alt={item.name}
 										name={item.name}
 										model={item.model.charAt(0).toUpperCase() + item.model.slice(1)}

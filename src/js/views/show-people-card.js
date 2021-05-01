@@ -43,7 +43,7 @@ export default function ShowPeopleCard() {
 								<div key={index} className="col-lg-4 mb-5">
 									<PeopleCard
 										key={index}
-										cardId={index}
+										cardId={item.id}
 										alt={item.name}
 										title={item.name}
 										gender={item.gender.charAt(0).toUpperCase() + item.gender.slice(1)}

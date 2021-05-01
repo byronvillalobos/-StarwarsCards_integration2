@@ -46,17 +46,16 @@ export default function VehicleCardDetail() {
 
 														<p className="card-text text-left m-0">
 															Capacity:&nbsp;&nbsp;
-															{item.cargo_capacity}
+															{item.passengers}
 														</p>
 														<p className="card-text text-left m-0">
 															Manufacturer:&nbsp;&nbsp;&nbsp;&nbsp;
-															{item.manufacturer.charAt(0).toUpperCase() +
-																item.manufacturer.slice(1)}
+															{item.name.charAt(0).toUpperCase() + item.name.slice(1)}
 														</p>
-														<p className="card-text text-left m-0">
+														{/* <p className="card-text text-left m-0">
 															Length:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 															{item.length}
-														</p>
+														</p> */}
 														<div className="card-button-back d-block">
 															<Link to="/show-vehicle-card">
 																<button
