@@ -10,7 +10,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loadPeoples: async () => {
 				// Se obtiene la variable del localStorage
 				let localStoragePeoples = localStorage.getItem("peoplesAPI");
-
 				if (localStoragePeoples === null || localStoragePeoples === undefined) {
 					// Si localStorage NO existe, entonces se cargan los datos de la API.
 					const url = "https://3000-salmon-skunk-pg1x5c12.ws-us04.gitpod.io/people/";
